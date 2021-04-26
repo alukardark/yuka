@@ -1,0 +1,135 @@
+#portfolio {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  pointer-events: none;
+  transform: translate(0, 32px);
+
+  .main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+#portfolio-grid {
+  height: fit-content;
+  transition: filter 0.5s, opacity 0.5s;
+  .main-container {
+    height: fit-content;
+    .header {
+      font-size: 44px;
+    }
+  }
+}
+
+.portfolio-item-container {
+  width: 25%;
+  padding: 0 16px;
+
+  .bg {
+    z-index: 0;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+
+    transition: transform 0.5s, opacity 0.5s;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 130%;
+    }
+  }
+
+  .portfolio-item {
+    z-index: 1;
+    position: relative;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+
+    transition: opacity 0.5s;
+
+    text-decoration: none;
+
+    justify-content: flex-end;
+
+    padding: 32px;
+    height: 410px;
+
+    .title {
+      font-family: $font-add;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 150%;
+      transform: translate(0, 72px);
+      transition: transform 0.5s;
+
+      color: #ffffff;
+    }
+
+    .simple-button {
+      margin-top: 24px;
+      transform: translate(0, -36px);
+      transition: transform 0.5s, opacity 0.5s;
+      opacity: 0;
+    }
+
+    &:hover {
+      .title {
+        transform: translate(0, 0);
+      }
+      .simple-button {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+
+    &:hover ~ .bg {
+      opacity: 1;
+    }
+  }
+}
+
+#portfolio-items-grid {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  display: flex;
+}
+
+#portfolio {
+  &.-hovered {
+    .portfolio-item {
+      opacity: 0.3;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    #portfolio-grid {
+      filter: blur(16px);
+      opacity: 0.6;
+    }
+  }
+
+  &.-active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(0, 0);
+    transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  }
+  &.-prev {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, -32px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+}

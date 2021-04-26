@@ -1,0 +1,23 @@
+.simple-button {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 48px;
+  width: fit-content;
+  line-height: 48px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 108px 0 16px;
+
+  text-decoration: none;
+
+  background-repeat: no-repeat;
+  background-position: center right 8px;
+
+  @include bgsvg(
+    '<svg width="52" height="32" viewBox="0 0 52 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5 16L47 16" stroke="#{$main-color}" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 11L47 16L42 21" stroke="#{$main-color}" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  '
+  );
+}

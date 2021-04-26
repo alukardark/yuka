@@ -1,0 +1,20 @@
+.fullscreen-section {
+  width: 100vw;
+  height: 100vh;
+  min-height: 800px;
+  position: relative;
+  z-index: 1;
+
+  position: absolute !important;
+  top: 0;
+  left: 0;
+
+  &.-load {
+    pointer-events: none !important;
+  }
+
+  // opacity: 0;
+  // &.-active {
+  //   opacity: 1;
+  // }
+}

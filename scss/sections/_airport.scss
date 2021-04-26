@@ -1,0 +1,78 @@
+#airport {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, transform 0.5s;
+
+  transform: translate(0, 32px);
+
+  height: 100%;
+  .main-container {
+    height: 100%;
+  }
+
+  &.-active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(0, 0);
+    transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  }
+
+  &.-prev {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, -32px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+}
+#airport-grid {
+  display: flex;
+  height: 100%;
+}
+
+#airport-slider {
+  width: 50%;
+}
+
+#airport-text {
+  width: 50%;
+  padding-left: 56px;
+  flex-shrink: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .subheder {
+    font-size: 16px;
+    opacity: 0.5;
+  }
+  .header {
+    font-family: $font-add;
+    font-weight: bold;
+    font-size: 60px;
+  }
+  .content {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 520px;
+    strong {
+      font-weight: 500;
+    }
+  }
+  .simple-button {
+    margin-top: 32px;
+  }
+}
+
+#airport-slider {
+  position: relative;
+  width: 100%;
+
+  height: 100%;
+  padding: 64px 56px 64px 64px;
+  .slide {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+  }
+}

@@ -1,0 +1,46 @@
+body.-navigation-opened {
+  .menu-trigger {
+    span {
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
+    &:after,
+    &:before {
+      transition: margin 0.5s, transform 0.5s 0.5s;
+      margin-top: 0;
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  #navigation {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(0, 0);
+    transition: opacity 0.5s 0.5s;
+  }
+  .lang-switcher {
+    opacity: 1 !important;
+    transition: opacity 0.5s;
+  }
+  .navigation-dots {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  #aside {
+    .background {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: transform 0.5s;
+    }
+    &:hover {
+      .navigation-dots {
+        opacity: 0;
+      }
+    }
+  }
+}
