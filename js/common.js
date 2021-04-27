@@ -57,13 +57,6 @@ jQuery(document).ready(function ($) {
     }
 
 
-
-
-
-
-
-
-
     const nextScreen = () => {
         let currentSection = $('.fullscreen-section.-active');
         let nextSection = currentSection.next('.fullscreen-section');
@@ -83,7 +76,7 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    $(document).on('click', '.navigation-dots .dot', function(e) {
+    $(document).on('click', '.navigation-dots .dot', function (e) {
         let screen = $($(this).attr('href'));
         goToSection(screen);
         console.log(screen);
@@ -91,29 +84,32 @@ jQuery(document).ready(function ($) {
     });
 
 
+    var div = $('#airport-text');
+    $('body').bind('mousewheel', function (e) {
+            if (!div.is(e.target) && div.has(e.target).length === 0) {
+                if (e.target != document.getElementById('airport-text')) {
+                    if (e.originalEvent.wheelDelta / 120 > 0) {
+                        if (transitionActive == false) {
+                            prevScreen();
+                            console.log('scrolling up !');
+                        }
+                    }
+                    else {
+                        if (transitionActive == false) {
+                            nextScreen();
+                        }
+                    }
+                }
+            }
+        }
+    );
 
-    $('body').bind('mousewheel', function(e){
-        if(e.originalEvent.wheelDelta / 120 > 0) {
-            if ( transitionActive == false ) {
-                prevScreen();
-                console.log('scrolling up !');
-            }
-        }
-        else{
-            if ( transitionActive == false ) {
-                nextScreen();
-            }
-        }
+
+    document.querySelectorAll('.scrollbar').forEach(el => {
+        new SimpleBar(el, {
+            autoHide: false
+        });
     });
-
-
-
-
-
-
-
-
-
 
 
     var vid = document.getElementById("videoBG");
@@ -128,25 +124,27 @@ jQuery(document).ready(function ($) {
 
     const showAside = () => {
         $('body').addClass('-navigation-opened -blur-overlay')
-        if (currentGSection == '#main'){
-            pauseVid();}
+        if (currentGSection == '#main') {
+            pauseVid();
+        }
     }
 
     const hideAside = () => {
         $('body').removeClass('-navigation-opened -blur-overlay')
-        if (currentGSection == '#main'){
-            playVid();}
+        if (currentGSection == '#main') {
+            playVid();
+        }
     }
 
-    $(document).on('click', '.menu-trigger', function() {
-        if ( $('body').hasClass('-navigation-opened') ) {
+    $(document).on('click', '.menu-trigger', function () {
+        if ($('body').hasClass('-navigation-opened')) {
             hideAside();
         } else {
             showAside();
         }
     });
 
-    $(document).on('mouseenter', '.service-item', function() {
+    $(document).on('mouseenter', '.service-item', function () {
         const serviceId = $(this).attr('data-service');
 
         console.log(serviceId);
@@ -156,29 +154,122 @@ jQuery(document).ready(function ($) {
     });
 
 
-    $(document).on('mouseleave', '.service-item', function() {
+    $(document).on('mouseleave', '.service-item', function () {
 
         $('.service-bg').removeClass('-active');
     });
 
 
-    $(document).on('mouseenter', '.portfolio-item', function() {
+    var $dataId = '';
+    $(document).on('mouseenter', '.portfolio-item', function () {
         $('#portfolio').addClass('-hovered');
+        $dataId = $(this).attr('data-id');
+        $('.bg-cont .bg[data-id='+$dataId+']').addClass('active');
     });
 
 
-    $(document).on('mouseleave', '.portfolio-item', function() {
+    $(document).on('mouseleave', '.portfolio-item', function () {
         $('#portfolio').removeClass('-hovered');
+        $dataId = $(this).attr('data-id');
+        $('.bg-cont .bg[data-id='+$dataId+']').removeClass('active');
     });
 
 
     // $(document).on("click",".menu-trigger",function(){$("body").toggleClass("-navigation-opened")});
 
 
+    new Swiper('#portfolio-items-grid .swiper-container', {
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        slidesPerGroup: 4,
+        loopFillGroupWithBlank: true,
+        speed: 800,
+        breakpoints: {
+            // 1339: {
+            //     slidesPerView: 1,
+            //     slidesPerGroup: 1,
+            // },
+            // 991: {
+            //     slidesPerView: 1,
+            //     slidesPerGroup: 1,
+            // },
+            // 767: {
+            //     slidesPerView: 1,
+            //     slidesPerGroup: 1,
+            // }
+        },
+        pagination: {
+            el: '#portfolio-items-grid .swiper-pagination',
+            clickable: true,
+        },
+
+
+        navigation: {
+            nextEl: '#portfolio-items-grid .swiper-button-next',
+            prevEl: '#portfolio-items-grid .swiper-button-prev',
+        },
+        on: {
+            init: function () {
+
+            },
+            paginationUpdate: function (swiper, paginationEl) {
+                $('.portfolio__currrent-slide').text( $('#portfolio-items-grid .swiper-pagination-bullet-active').index()+1 );
+            },
+            paginationRender: function () {
+                $('.portfolio__total-slides').text( $('#portfolio-items-grid .swiper-pagination-bullet').length )
+            },
+
+        }
+    });
 
 
 
 
 
+    new Swiper('#blog-items-grid .swiper-container', {
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        slidesPerGroup: 4,
+        loopFillGroupWithBlank: true,
+        speed: 800,
+        breakpoints: {
+            // 1339: {
+            //     slidesPerView: 1,
+            //     slidesPerGroup: 1,
+            // },
+            // 991: {
+            //     slidesPerView: 1,
+            //     slidesPerGroup: 1,
+            // },
+            // 767: {
+            //     slidesPerView: 1,
+            //     slidesPerGroup: 1,
+            // }
+        },
+        pagination: {
+            el: '#blog-items-grid .swiper-pagination',
+            clickable: true,
+        },
+
+
+        navigation: {
+            nextEl: '#blog-items-grid .swiper-button-next',
+            prevEl: '#blog-items-grid .swiper-button-prev',
+        },
+        on: {
+            init: function () {
+
+            },
+            paginationUpdate: function (swiper, paginationEl) {
+                $('.blog__currrent-slide').text( $('#blog-items-grid .swiper-pagination-bullet-active').index()+1 );
+            },
+            paginationRender: function () {
+                $('.blog__total-slides').text( $('#blog-items-grid .swiper-pagination-bullet').length )
+            },
+
+        }
+    });
 
 });

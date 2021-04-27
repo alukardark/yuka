@@ -14,13 +14,13 @@
 @import "node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
 @import 'vendors/fancy-modal';
 //@import "node_modules/animate.css/animate.min";
-//@import "node_modules/swiper/dist/css/swiper";
+@import "node_modules/swiper/dist/css/swiper";
 //@import "node_modules/wow.js/css/libs/animate";
 //@import "vendors/wow";
 //@import "node_modules/choices.js/public/assets/styles/choices.min";
 //@import "vendors/choices";
-//@import "node_modules/simplebar/dist/simplebar.min";
-//@import "vendors/simplebar";
+@import "node_modules/simplebar/dist/simplebar.min";
+@import "vendors/simplebar";
 //@import "node_modules/tippy.js/dist/tippy";
 //@import "vendors/tippy";
 //@import "node_modules/tippy.js/dist/themes/light";
@@ -73,6 +73,7 @@
 @import "elements/portfolio";
 @import "elements/contacts";
 @import "elements/simple_button";
+@import "elements/blog";
 
 
 

@@ -2,6 +2,7 @@ var gulp      = require('gulp'), // Подключаем Gulp
     sass        = require('gulp-sass'), //Подключаем Sass пакет,
     concat      = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
     uglify      = require('gulp-uglifyjs'); // Подключаем gulp-uglifyjs (для сжатия JS)
+    babel       = require ('gulp-babel') ;
 var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(done) {
@@ -21,6 +22,9 @@ gulp.task('scripts', function() {
         'node_modules/inputmask/dist/jquery.inputmask.min.js',
     ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
+        // .pipe(babel({
+        //     presets: ["@babel/preset-env"]
+        // }))
         .pipe(uglify()) // Сжимаем JS файл
         .pipe(gulp.dest('js')); // Выгружаем в папку js
 });

@@ -1,9 +1,12 @@
-#portfolio {
+#blog {
   opacity: 0;
   transition: opacity 0.5s, transform 0.5s;
   pointer-events: none;
   transform: translate(0, 32px);
 
+  .box{
+    max-width: 460px;
+  }
   .main-container {
     height: 100%;
     display: flex;
@@ -12,7 +15,7 @@
     justify-content: center;
   }
 
-  .swiper-nav-info{
+  .swiper-nav-info {
     font-family: $font-add;
     font-weight: normal;
     font-size: 20px;
@@ -62,68 +65,29 @@
       '
     );
   }
-  .bg {
-    z-index: 0;
-    //width: 40%;
-    width: calc(100% - 30px);
-    max-width: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0;
-    transition: transform 0.5s, opacity 0.5s;
-    &:after {
-      content: "";
-      display: block;
-      padding-bottom: 130%;
-    }
-    &.active {
-      opacity: 1;
-    }
-  }
-  .swiper-container{
+  .swiper-container {
     display: flex;
     flex-direction: column;
   }
-
 }
 
-#portfolio-grid {
-  height: fit-content;
-  transition: filter 0.5s, opacity 0.5s;
-  .main-container {
-    height: fit-content;
-    .header {
-      font-size: 44px;
-    }
-  }
-}
-
-.portfolio-item-container {
+.blog-item-container {
   width: 25%;
   width: 100%;
   //padding: 0 16px;
 
-  .portfolio-item {
+  .blog-item {
     z-index: 1;
     position: relative;
     background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
-
     transition: opacity 0.5s;
-
     text-decoration: none;
-
     justify-content: flex-end;
-
-    padding: 32px;
-    height: 410px;
+    padding: 15px;
+    height: 440px;
 
     .title {
       font-family: $font-add;
@@ -159,31 +123,37 @@
     }
 
   }
-  .bg-cont {
+}
 
+#blog-grid {
+  height: fit-content;
+  transition: filter 0.5s, opacity 0.5s;
+  .main-container {
+    height: fit-content;
+    .header {
+      font-size: 44px;
+    }
   }
 }
 
-#portfolio-items-grid {
+#blog-items-grid {
   width: 100%;
-  //width: calc(100% + 32px);
-  //margin-left: -16px;
   display: flex;
 }
 
-#portfolio {
+#blog {
   &.-hovered {
-    .swiper-nav{
+    .swiper-nav {
       filter: blur(16px);
       opacity: 0.6;
     }
-    .portfolio-item {
+    .blog-item {
       opacity: 0.3;
       &:hover {
         opacity: 1;
       }
     }
-    #portfolio-grid {
+    #blog-grid {
       filter: blur(16px);
       opacity: 0.6;
     }

@@ -80,8 +80,12 @@
         text-decoration: none;
         line-height: 1.3;
         i {
+          //display: block;
+          //margin-bottom: 5px;
           font-size: 10px;
           opacity: 0.5;
+          font-family: $font-basic;
+          font-style: normal;
         }
         span {
           font-family: $font-add;
@@ -90,6 +94,8 @@
           margin-top: 4px;
           position: relative;
           opacity: 0.8;
+         //text-decoration: underline;
+         // border-bottom: 1px solid  rgba(255, 255, 255, 0.2);
         }
 
         transition: opacity 0.1s;
