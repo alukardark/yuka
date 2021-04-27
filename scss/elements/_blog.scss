@@ -4,17 +4,23 @@
   pointer-events: none;
   transform: translate(0, 32px);
 
-  .box{
+  .box {
     max-width: 460px;
   }
   .main-container {
-    height: 100%;
+    //height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
   }
 
+  .blog__wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .swiper-nav-info {
     font-family: $font-add;
     font-weight: normal;
@@ -34,7 +40,6 @@
     align-items: center;
     justify-content: center;
     margin-top: 60px;
-    margin-bottom: 15px;
   }
   .swiper-button-prev {
     position: static;
@@ -69,13 +74,49 @@
     display: flex;
     flex-direction: column;
   }
+  .swiper-slide {
+    width: 360px;
+    transform: translateY(0);
+    transition: .4s ease-in-out opacity, .3s ease-in-out transform;
+    will-change: opacity, transform;
+    &.hide{
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+
+  .swiper-wrapper {
+    margin-left: -480px;
+  }
+
+  .blog__btn-all{
+    font-weight: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: auto;
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 52px;
+      height: 32px;
+      margin-left: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: middle;
+      @include bgsvg(
+                      '<svg  viewBox="0 0 52 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 16L47 16" stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M42 11L47 16L42 21" stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+      '
+      );
+    }
+  }
 }
 
 .blog-item-container {
   width: 25%;
   width: 100%;
-  //padding: 0 16px;
-
   .blog-item {
     z-index: 1;
     position: relative;
@@ -85,42 +126,95 @@
     flex-direction: column;
     transition: opacity 0.5s;
     text-decoration: none;
-    justify-content: flex-end;
-    padding: 15px;
+    padding: 15px 15px 0;
     height: 440px;
-
+    .blog-item__img {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 150px;
+      min-height: 150px;
+      margin-bottom: 15px;
+      transition: .2s ease-in-out filter;
+      will-change: filter;
+    }
     .title {
       font-family: $font-add;
       font-style: normal;
       font-weight: bold;
       font-size: 24px;
       line-height: 150%;
-      transform: translate(0, 72px);
       transition: transform 0.5s;
-
       color: #ffffff;
+      margin-bottom: 15px;
+      max-height: 72px;
+      overflow: hidden;
     }
 
-    .simple-button {
-      margin-top: 24px;
-      transform: translate(0, -36px);
-      transition: transform 0.5s, opacity 0.5s;
-      opacity: 0;
+    p{
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 150%;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 0 15px;
+      max-height: 85px;
+      overflow: hidden;
+      transition: transform 0.5s, color 0.5s ;
     }
-
-    &:hover {
-      .title {
-        transform: translate(0, 0);
+    .blog__tags{
+      margin-bottom: 15px;
+      li{
+        display: inline-block;
+        font-size: 12px;
+        line-height: 150%;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+        &:first-of-type{
+          font-weight: normal;
+          color: rgba(255, 255, 255, 0.8);
+        }
       }
-      .simple-button {
-        transform: translate(0, 0);
+    }
+    .blog-btn {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 150%;
+      text-align: center;
+      color: #FFFFFF;
+      opacity: 0.5;
+      border-top: rgba(255, 255, 255, 0.1) 1px solid;
+      display: block;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      padding: 14px;
+      box-sizing: border-box;
+      transition: .2s ease-in-out opacity;
+    }
+
+    .blog__footer{
+      margin-top: auto;
+    }
+    &:hover {
+      .blog-item__img{
+        -webkit-filter: brightness(1.15);
+        filter: brightness(1.15);
+      }
+
+      .title {
+        transform: translate(0, -5px);
+      }
+      p{
+        transform: translate(0, -5px);
+        color: #fff;
+      }
+      .blog-btn {
+        //transform: translate(0, 0);
         opacity: 1;
       }
     }
 
-    &:hover ~ .bg {
-      opacity: 1;
-    }
+
 
   }
 }
@@ -137,8 +231,8 @@
 }
 
 #blog-items-grid {
-  width: 100%;
-  display: flex;
+  //width: 100%;
+  //display: flex;
 }
 
 #blog {

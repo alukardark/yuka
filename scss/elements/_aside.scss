@@ -206,3 +206,24 @@
     }
   }
 }
+
+
+@media (max-width: 767px) {
+  .navigation-dots{
+    display: none;
+  }
+  #aside{
+    .lang-switcher{
+      display: none;
+    }
+    .background{
+      display: none;
+    }
+
+  }
+
+  .menu-trigger{
+    top: 16px;
+    right: 22px;
+  }
+}

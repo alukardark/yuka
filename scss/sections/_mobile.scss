@@ -1,0 +1,18 @@
+.mobile{
+  overflow: auto;
+  .fullscreen-section{
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  #main #about-grid{
+    opacity: 1;
+  }
+  .service-item{
+    opacity: 1;
+
+  }
+  #services{
+    pointer-events: auto;
+  }
+}

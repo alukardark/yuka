@@ -5,7 +5,7 @@
   position: absolute;
 
   top: 96px;
-  left: 0;
+  left: 15px;
 
   @include bgsvg(
     '<svg width="161" height="62" viewBox="0 0 161 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,3 +32,4 @@
   '
   );
 }
+

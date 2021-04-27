@@ -76,6 +76,15 @@
             <li><a href="#">Контакты</a></li>
         </ul>
 
+
+        <div class="lang-switcher">
+            <div class="lang arabic"></div>
+            <div class="line"></div>
+            <div class="lang ru"></div>
+            <div class="line"></div>
+            <div class="lang en"></div>
+        </div>
+
         <div class="clients-link-container"><a href="#" class="clients-link">Вход для клиентов</a></div>
     </nav>
 </div>
@@ -85,7 +94,7 @@
     <source src="video/bg.webm" type="video/webm">
 </video>
 
-<section id="main" class="fullscreen-section ">
+<section id="main" class="fullscreen-section -active">
     <div class="main-container">
         <div id="main-logo"></div>
     </div>
@@ -95,14 +104,14 @@
             <div class="subheader">Рекламное агенство</div>
             <h1 class="header">YUKA ADV</h1>
             <div class="grid">
-                <div class="box">Наша миссия — предоставление комплексных<br> рекламных услуг для укрепления<br> Вашего
-                    имиджа и вывода вашего бренда<br> на рынки России и СНГ.
+                <div class="box">Наша миссия — предоставление комплексных рекламных услуг для укрепления Вашего
+                    имиджа и вывода вашего бренда на рынки России и СНГ.
                 </div>
-                <div class="box">Совмещая опыт в digital, креативность, и<br> глубокие знания в бизнес стратегиях, мы
-                    создаем<br> умные решения, помогающие достигать<br> поставленных целей быстрее и эффективнее.
+                <div class="box">Совмещая опыт в digital, креативность, и глубокие знания в бизнес стратегиях, мы
+                    создаем умные решения, помогающие достигать поставленных целей быстрее и эффективнее.
                 </div>
-                <div class="box">Мы — виртуальное рекламное агентство, <br> которому доверяют тысячи клиентов<br> из
-                    разных индустрий. YUKA ADV — это<br> современное решение, которое Вы искали!
+                <div class="box">Мы — виртуальное рекламное агентство,  которому доверяют тысячи клиентов из
+                    разных индустрий. YUKA ADV — это современное решение, которое Вы искали!
                 </div>
             </div>
         </div>
@@ -192,23 +201,24 @@
 
 </section>
 
-
-<section id="blog" class="fullscreen-section -menu -active">
-    <div class="main-container">
-        <div id="blog-grid">
-            <div class="main-container">
-                <div class="header">Блог и анонсы</div>
-                <div class="grid">
-                    <div class="box">Наш блог о digital маркетинге содержит множество полезных материалов: начиная от
-                        статей и информации об отрасли
-                        и заканчивая обновлениями компании.
+<section id="blog" class="fullscreen-section -menu ">
+    <div class="blog__wrap">
+        <div class="main-container">
+            <div id="blog-grid">
+                <div class="main-container">
+                    <div class="header">Блог и анонсы</div>
+                    <div class="grid">
+                        <div class="box">Наш блог о digital маркетинге содержит множество полезных материалов: начиная
+                            от
+                            статей и информации об отрасли
+                            и заканчивая обновлениями компании.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="blog-items-grid">
-
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -220,18 +230,105 @@
                                 </span>
                                 <p>Мы рады сообщить, что для интеграций наших рекламодателей доступен новый партнер –
                                     гоночная команда «B-TUNING RACING TEAM»</p>
-                                <ul class="blog__tags">
-                                    <li>Теги:</li>
-                                    <li>#новости</li>
-                                    <li>#анонсы</li>
-                                </ul>
-                                <span class="simple-button">Читать полностью</span>
+
+                                <span class="blog__footer">
+                                    <ul class="blog__tags">
+                                        <li>Теги:</li>
+                                        <li>#новости</li>
+                                    </ul>
+                                    <span class="blog-btn">Читать полностью</span>
+                                </span>
                             </a>
 
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="blog-item-container">
+                            <a href="#" class="blog-item">
+                                <span class="blog-item__img" style="background-image: url(img/blog/blog-2.jpg);"></span>
+                                <span class="title">
+                                    Аудиторные закупки
+                                </span>
+                                <p>С каждым днем, programmatic закупки увеличивают свою долю в digital рекламе во многом благодаря тому, что маркетологи продолжают...</p>
+
+                                <span class="blog__footer">
+                                    <ul class="blog__tags">
+                                        <li>Теги:</li>
+                                        <li>#новости</li>
+                                        <li>#анонсы</li>
+                                    </ul>
+                                    <span class="blog-btn">Читать полностью</span>
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="blog-item-container">
+                            <a href="#" class="blog-item">
+                                <span class="blog-item__img" style="background-image: url(img/blog/blog-3.jpg);"></span>
+                                <span class="title">
+                                    Social media для бизнеса
+                                </span>
+                                <p>Социальные сети — это не прихоть и не тенденция. Это вечная реальность сетевого существования. </p>
+
+                                <span class="blog__footer">
+                                    <ul class="blog__tags">
+                                        <li>Теги:</li>
+                                        <li>#новости</li>
+                                    </ul>
+                                    <span class="blog-btn">Читать полностью</span>
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="blog-item-container">
+                            <a href="#" class="blog-item">
+                                <span class="blog-item__img" style="background-image: url(img/blog/blog-1.jpg);"></span>
+                                <span class="title">
+                                    Рекламная кампания для завода оргсинтез
+                                </span>
+                                <p>Завершилась комплексная рекламная кампания для клиента в сфере нефте и газодобычи.»</p>
+
+                                <span class="blog__footer">
+                                    <ul class="blog__tags">
+                                        <li>Теги:</li>
+                                        <li>#новости</li>
+                                    </ul>
+                                    <span class="blog-btn">Читать полностью</span>
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="blog-item-container">
+                            <a href="#" class="blog-item">
+                                <span class="blog-item__img" style="background-image: url(img/blog/blog-1.jpg);"></span>
+                                <span class="title">
+                                    Партнеры в автоспорте
+                                </span>
+                                <p>Мы рады сообщить, что для интеграций наших рекламодателей доступен новый партнер –
+                                    гоночная команда «B-TUNING RACING TEAM»</p>
+
+                                <span class="blog__footer">
+                                    <ul class="blog__tags">
+                                        <li>Теги:</li>
+                                        <li>#новости</li>
+                                    </ul>
+                                    <span class="blog-btn">Читать полностью</span>
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+
+
                 </div>
 
+                <div class="main-container">
                 <div class="swiper-nav">
                     <div class="swiper-pagination d-none"></div>
                     <div class="swiper-button-prev"></div>
@@ -241,13 +338,14 @@
                         <span class="blog__total-slides"></span>
                     </div>
                     <div class="swiper-button-next"></div>
+
+                    <a href="#" class="blog__btn-all">Все новости</a>
+                </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
 
 <section id="portfolio" class="fullscreen-section -menu ">
     <div class="main-container">
@@ -255,13 +353,13 @@
             <div class="main-container">
                 <div class="header">Портфолио</div>
                 <div class="grid">
-                    <div class="box">Независимо от сложности поставленной задачи,<br> мы концентрируемся на достижении
-                        <br> измеримых результатов.
+                    <div class="box">Независимо от сложности поставленной задачи, мы концентрируемся на достижении
+                         измеримых результатов.
                     </div>
-                    <div class="box">Работаем с компаниями любых масштабов,<br> уровней развития, и из любых <br>сфер
+                    <div class="box">Работаем с компаниями любых масштабов, уровней развития, и из любых сфер
                         деятельности.
                     </div>
-                    <div class="box">Бросаем себе вызов, чтобы с каждым проектом <br>добиться наилучшего результата <br>для
+                    <div class="box">Бросаем себе вызов, чтобы с каждым проектом добиться наилучшего результата для
                         каждого бренда.
                     </div>
                 </div>
@@ -403,17 +501,11 @@
 
 <div id="dark-overlay"></div>
 
-
 <script src="js/libs.min.js"></script>
 
 
-<!--<script src="node_modules/jquery/dist/jquery.min.js"></script>-->
-<!--<script src="node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>-->
-<!--<script src="node_modules/swiper/dist/js/swiper.min.js"></script>-->
-<!--<script src="node_modules/simplebar/dist/simplebar.min.js"></script>-->
-<!--<script src="node_modules/inputmask/dist/jquery.inputmask.min.js"></script>-->
 
-<script type="module" src="js/common.js" crossorigin></script>
+<script src="js/common.js"></script>
 
 
 </body>
