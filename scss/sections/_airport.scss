@@ -32,10 +32,34 @@
 
 #airport-slider {
   width: 50%;
+  position: relative;
+  height: 100%;
+
+  padding: 64px 56px 64px 64px;
+  .airport-slider{
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-wrapper{
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide{
+    width: 100%;
+    height: 100%;
+  }
+  .slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
 }
 
 #airport-text {
-  width: 50%;
+  width: 45%;
   padding-left: 56px;
   flex-shrink: 0;
   height: 100%;
@@ -44,10 +68,15 @@
   justify-content: center;
 
 
+
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 600px;
+  .scrollbar{
+    padding-right: 20px;
+  }
 
   .subheder {
     font-size: 16px;
@@ -72,17 +101,72 @@
   }
 }
 
-#airport-slider {
-  position: relative;
+#airport-slider-thumbs{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-
-  height: 100%;
-  padding: 64px 56px 64px 64px;
-  .slide {
+  height: 100px;
+  z-index: 1;
+  padding: 0 15px;
+  .swiper-wrapper{
     width: 100%;
     height: 100%;
-    background-size: contain;
+  }
+  .swiper-slide{
+    //width: 50px;
+    //height: 50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    &:after{
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      background: rgba(255, 255, 255, 0.3);
+      transition: .2s ease-in-out all;
+    }
+    &:before{
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      background: #fff;
+      transition: .3s ease-in-out all;
+      width: 0;
+    }
+  }
+  .slide {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: .2s ease-in-out all;
+    box-sizing: border-box;
+    opacity: .3;
   }
+  .active-slide{
+    .slide{
+      opacity: 1;
+    }
+    &:before{
+      transition: 2.5s ease-in-out all;
+      width: 100%;
+    }
+  }
+}
+.airport__wrap{
+  width: 100%;
+  height: 100%;
+
+  position: relative;
 }

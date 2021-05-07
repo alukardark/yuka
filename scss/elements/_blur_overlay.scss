@@ -4,24 +4,33 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(30px);
+  background-color: rgba(0, 0, 0, 0.7);
   backface-visibility: hidden;
-  translatez: 0px;
-
   pointer-events: none;
-
   z-index: 2;
-
   opacity: 0;
-
   transition: opacity 0.5s 0.3s;
-
   will-change: opacity;
-
   // &:hover {
   //   opacity: 1;
   // }
+}
+.-blur-overlay{
+  .fullscreen-section{
+    filter: blur(20px);
+  }
+}
+@supports ((-webkit-backdrop-filter: blur(30px)) or (backdrop-filter: blur(30px))) {
+  #blur-overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+  .-blur-overlay{
+    .fullscreen-section{
+      filter: none ;
+    }
+  }
 }
 
 #dark-overlay {

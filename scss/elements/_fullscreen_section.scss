@@ -2,9 +2,11 @@
   //width: 100vw;
   width: 100%;
   height: 100vh;
-  min-height: 800px;
+  //min-height: 800px;
+  min-height: 706px;
   position: relative;
   z-index: 1;
+  transition: .2s ease-in-out filter;
 
   position: absolute !important;
   top: 0;
@@ -19,3 +21,4 @@
   //   opacity: 1;
   // }
 }
+

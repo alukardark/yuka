@@ -85,7 +85,15 @@
             <div class="lang en"></div>
         </div>
 
-        <div class="clients-link-container"><a href="#" class="clients-link">Вход для клиентов</a></div>
+
+        <div class="navigation__footer">
+            <div class="clients-link-container"><a href="#" class="clients-link">Вход для клиентов</a></div>
+            <div class="navigation__contacts">
+                <a href="tel:+971 4 2783571" class="navigation__tel">+971 4 2783571</a>
+
+                <a href="mailto:sale-rus@yuka-adv.ae" class="navigation__mail">sale-rus@yuka-adv.ae</a>
+            </div>
+        </div>
     </nav>
 </div>
 
@@ -94,7 +102,7 @@
     <source src="video/bg.webm" type="video/webm">
 </video>
 
-<section id="main" class="fullscreen-section -active">
+<section id="main" class="fullscreen-section ">
     <div class="main-container">
         <div id="main-logo"></div>
     </div>
@@ -110,7 +118,7 @@
                 <div class="box">Совмещая опыт в digital, креативность, и глубокие знания в бизнес стратегиях, мы
                     создаем умные решения, помогающие достигать поставленных целей быстрее и эффективнее.
                 </div>
-                <div class="box">Мы — виртуальное рекламное агентство,  которому доверяют тысячи клиентов из
+                <div class="box">Мы — виртуальное рекламное агентство, которому доверяют тысячи клиентов из
                     разных индустрий. YUKA ADV — это современное решение, которое Вы искали!
                 </div>
             </div>
@@ -118,12 +126,42 @@
     </div>
 </section>
 
-<section id="airport" class="fullscreen-section ">
+<section id="airport" class="fullscreen-section -active">
     <div class="main-container">
         <div id="airport-grid">
             <div id="airport-slider">
-                <div class="slide" style="background-image: url(img/slider/1.jpg);"></div>
+                <div class="airport__wrap">
+                    <div class="airport-slider swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide" style="background-image: url(img/slider/1.jpg);"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide" style="background-image: url(img/img/portfolio-item-1.jpg);"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide" style="background-image: url(img/img/portfolio-item-2.jpg);"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="airport-slider-thumbs" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide" style="background-image: url(img/slider/1.jpg);"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide" style="background-image: url(img/img/portfolio-item-1.jpg);"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide" style="background-image: url(img/img/portfolio-item-2.jpg);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div id="airport-text">
                 <div class="scrollbar">
                     <div class="subheder">РЕКЛАМНЫЕ СТЕНДЫ</div>
@@ -249,7 +287,8 @@
                                 <span class="title">
                                     Аудиторные закупки
                                 </span>
-                                <p>С каждым днем, programmatic закупки увеличивают свою долю в digital рекламе во многом благодаря тому, что маркетологи продолжают...</p>
+                                <p>С каждым днем, programmatic закупки увеличивают свою долю в digital рекламе во многом
+                                    благодаря тому, что маркетологи продолжают...</p>
 
                                 <span class="blog__footer">
                                     <ul class="blog__tags">
@@ -270,7 +309,8 @@
                                 <span class="title">
                                     Social media для бизнеса
                                 </span>
-                                <p>Социальные сети — это не прихоть и не тенденция. Это вечная реальность сетевого существования. </p>
+                                <p>Социальные сети — это не прихоть и не тенденция. Это вечная реальность сетевого
+                                    существования. </p>
 
                                 <span class="blog__footer">
                                     <ul class="blog__tags">
@@ -290,7 +330,8 @@
                                 <span class="title">
                                     Рекламная кампания для завода оргсинтез
                                 </span>
-                                <p>Завершилась комплексная рекламная кампания для клиента в сфере нефте и газодобычи.»</p>
+                                <p>Завершилась комплексная рекламная кампания для клиента в сфере нефте и
+                                    газодобычи.»</p>
 
                                 <span class="blog__footer">
                                     <ul class="blog__tags">
@@ -329,18 +370,19 @@
                 </div>
 
                 <div class="main-container">
-                <div class="swiper-nav">
-                    <div class="swiper-pagination d-none"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-nav-info">
-                        <span class="blog__currrent-slide"></span>
-                        /
-                        <span class="blog__total-slides"></span>
-                    </div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-nav">
 
-                    <a href="#" class="blog__btn-all">Все новости</a>
-                </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-nav-info">
+                            <span class="blog__currrent-slide"></span>
+                            /
+                            <span class="blog__total-slides"></span>
+                        </div>
+                        <!--<div class="swiper-pagination"></div>-->
+                        <div class="swiper-button-next"></div>
+
+                        <a href="#" class="blog__btn-all">Все новости</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -354,7 +396,7 @@
                 <div class="header">Портфолио</div>
                 <div class="grid">
                     <div class="box">Независимо от сложности поставленной задачи, мы концентрируемся на достижении
-                         измеримых результатов.
+                        измеримых результатов.
                     </div>
                     <div class="box">Работаем с компаниями любых масштабов, уровней развития, и из любых сфер
                         деятельности.
@@ -370,11 +412,11 @@
 
             <div class="bg-cont">
                 <div class="bg" style="background-image: url(img/portfolio-item-1.jpg)" data-id="1"></div>
-                <div class="bg" style="background-image: url(img/portfolio-item-2.jpg)" data-id="2"></div>
+                <div class="bg" style="background-image: url(img/portfolio-item-4.jpg)" data-id="2"></div>
                 <div class="bg" style="background-image: url(img/portfolio-item-3.jpg)" data-id="3"></div>
-                <div class="bg" style="background-image: url(img/portfolio-item-4.jpg)" data-id="4"></div>
-                <div class="bg" style="background-image: url(img/portfolio-item-5.jpg)" data-id="5"></div>
-                <div class="bg" style="background-image: url(img/portfolio-item-6.jpg)" data-id="6"></div>
+                <div class="bg" style="background-image: url(img/portfolio-item-2.jpg)" data-id="4"></div>
+                <!--<div class="bg" style="background-image: url(img/portfolio-item-5.jpg)" data-id="5"></div>-->
+                <!--<div class="bg" style="background-image: url(img/portfolio-item-6.jpg)" data-id="6"></div>-->
             </div>
 
 
@@ -419,25 +461,25 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="portfolio-item-container">
-                            <a href="#" class="portfolio-item" data-id="5">
-            <span class="title">КОРОЛИ <br>
-              НОКАУТОВ II</span>
-                                <span class="simple-button">Подробнее</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="portfolio-item-container">
-                            <a href="#" class="portfolio-item" data-id="6">
-            <span class="title">КОРОЛИ <br>
-              НОКАУТОВ II</span>
-                                <span class="simple-button">Подробнее</span>
-                            </a>
-                            <div class="bg" style="background-image: url(img/portfolio-item-6.jpg)"></div>
-                        </div>
-                    </div>
+                    <!--<div class="swiper-slide">-->
+                    <!--<div class="portfolio-item-container">-->
+                    <!--<a href="#" class="portfolio-item" data-id="5">-->
+                    <!--<span class="title">КОРОЛИ <br>-->
+                    <!--НОКАУТОВ II</span>-->
+                    <!--<span class="simple-button">Подробнее</span>-->
+                    <!--</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="swiper-slide">-->
+                    <!--<div class="portfolio-item-container">-->
+                    <!--<a href="#" class="portfolio-item" data-id="6">-->
+                    <!--<span class="title">КОРОЛИ <br>-->
+                    <!--НОКАУТОВ II</span>-->
+                    <!--<span class="simple-button">Подробнее</span>-->
+                    <!--</a>-->
+                    <!--<div class="bg" style="background-image: url(img/portfolio-item-6.jpg)"></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                 </div>
 
                 <div class="swiper-nav">
@@ -502,7 +544,6 @@
 <div id="dark-overlay"></div>
 
 <script src="js/libs.min.js"></script>
-
 
 
 <script src="js/common.js"></script>

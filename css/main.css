@@ -9084,7 +9084,7 @@ button.swiper-pagination-bullet {
   .scrollbar .simplebar-content {
     -webkit-mask-image: linear-gradient(to top, transparent 0%, red 20%, #fff);
     mask-image: linear-gradient(to top, transparent 0%, red 20%, #fff);
-    padding-bottom: 80px !important; }
+    padding-bottom: 60px !important; }
   .scrollbar .simplebar-scrollbar {
     width: 2px;
     right: 0px;
@@ -9542,6 +9542,7 @@ h4 {
     background-color: rgba(0, 0, 0, 0.04);
     right: 0;
     top: 0;
+    -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     backface-visibility: hidden;
     opacity: 0;
@@ -9697,15 +9698,24 @@ h4 {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(30px);
+  background-color: rgba(0, 0, 0, 0.7);
   backface-visibility: hidden;
-  translatez: 0px;
   pointer-events: none;
   z-index: 2;
   opacity: 0;
   transition: opacity 0.5s 0.3s;
   will-change: opacity; }
+
+.-blur-overlay .fullscreen-section {
+  filter: blur(20px); }
+
+@supports (-webkit-backdrop-filter: blur(30px)) or (backdrop-filter: blur(30px)) {
+  #blur-overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); }
+  .-blur-overlay .fullscreen-section {
+    filter: none; } }
 
 #dark-overlay {
   position: fixed;
@@ -9727,9 +9737,10 @@ h4 {
 .fullscreen-section {
   width: 100%;
   height: 100vh;
-  min-height: 800px;
+  min-height: 706px;
   position: relative;
   z-index: 1;
+  transition: .2s ease-in-out filter;
   position: absolute !important;
   top: 0;
   left: 0; }
@@ -10038,6 +10049,41 @@ h4 {
     .clients-link:hover:after {
       opacity: 1; }
 
+.navigation__contacts {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between; }
+  .navigation__contacts a {
+    font-weight: normal;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6); }
+    .navigation__contacts a:hover {
+      opacity: 0.7; }
+
+.navigation__tel:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 19px;
+  height: 19px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 13px;
+  background-image: url("data:image/svg+xml,%3Csvg  viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E\a%3Cpath d='M5.66965 9.7014C6.44762 11.2919 7.73687 12.5753 9.3309 13.346C9.44753 13.4013 9.57654 13.4252 9.70523 13.4155C9.83392 13.4058 9.95786 13.3627 10.0648 13.2905L12.4119 11.7254C12.5157 11.6562 12.6352 11.6139 12.7594 11.6025C12.8837 11.5911 13.0088 11.6109 13.1235 11.66L17.5144 13.5419C17.6636 13.6052 17.7881 13.7154 17.8693 13.8556C17.9504 13.9959 17.9838 14.1588 17.9643 14.3197C17.8255 15.4057 17.2956 16.4039 16.4739 17.1273C15.6521 17.8508 14.5948 18.2499 13.5 18.25C10.1185 18.25 6.87548 16.9067 4.48439 14.5156C2.0933 12.1245 0.75 8.88148 0.75 5.49997C0.750058 4.40513 1.14918 3.34786 1.87264 2.5261C2.5961 1.70435 3.59428 1.17448 4.68028 1.03569C4.84117 1.01622 5.00403 1.04956 5.14432 1.1307C5.28461 1.21183 5.39473 1.33636 5.4581 1.48552L7.34158 5.88032C7.3903 5.994 7.41015 6.11796 7.39936 6.24116C7.38858 6.36436 7.3475 6.48299 7.27977 6.58647L5.72011 8.96957C5.64912 9.07677 5.60716 9.20056 5.59831 9.32883C5.58947 9.4571 5.61405 9.58547 5.66965 9.7014V9.7014Z' stroke='%23D3C0A4' stroke-linecap='round' stroke-linejoin='round'/%3E\a%3C/svg%3E\a \a       "); }
+
+.navigation__mail:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 13px;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E\a%3Cpath d='M19 1.25L10 9.5L1 1.25' stroke='%23D3C0A4' stroke-linecap='round' stroke-linejoin='round'/%3E\a%3Cpath d='M1 1.25H19V14C19 14.1989 18.921 14.3897 18.7803 14.5303C18.6397 14.671 18.4489 14.75 18.25 14.75H1.75C1.55109 14.75 1.36032 14.671 1.21967 14.5303C1.07902 14.3897 1 14.1989 1 14V1.25Z' stroke='%23D3C0A4' stroke-linecap='round' stroke-linejoin='round'/%3E\a%3Cpath d='M8.36363 8.00012L1.23126 14.5382' stroke='%23D3C0A4' stroke-linecap='round' stroke-linejoin='round'/%3E\a%3Cpath d='M18.7688 14.5381L11.6363 8' stroke='%23D3C0A4' stroke-linecap='round' stroke-linejoin='round'/%3E\a%3C/svg%3E\a \a       "); }
+
 @media (max-width: 767px) {
   #navigation {
     z-index: 3;
@@ -10060,7 +10106,14 @@ h4 {
     padding-left: 15px; }
   .main-navigation .second-layer > li > a span {
     font-size: 20px;
-    line-height: 1.3; } }
+    line-height: 1.3; }
+  .navigation__contacts {
+    flex-direction: column;
+    margin-top: 25px; }
+    .navigation__contacts a {
+      margin-bottom: 10px; }
+      .navigation__contacts a:last-of-type {
+        margin-bottom: 0; } }
 
 #portfolio {
   opacity: 0;
@@ -10081,7 +10134,8 @@ h4 {
     text-align: center;
     color: #FFFFFF;
     min-width: 62px;
-    margin: 0 20px; }
+    margin: 0 20px;
+    width: auto; }
   #portfolio .swiper-nav {
     transition: filter 0.5s, opacity 0.5s;
     bottom: 0;
@@ -10118,10 +10172,18 @@ h4 {
     background-position: center;
     opacity: 0;
     transition: transform 0.5s, opacity 0.5s; }
-    #portfolio .bg:after {
+    #portfolio .bg:before {
       content: "";
       display: block;
       padding-bottom: 130%; }
+    #portfolio .bg:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%; }
     #portfolio .bg.active {
       opacity: 1; }
   #portfolio .swiper-container {
@@ -10336,7 +10398,8 @@ h4 {
     text-align: center;
     color: #FFFFFF;
     min-width: 62px;
-    margin: 0 20px; }
+    margin: 0 20px;
+    width: auto; }
   #blog .swiper-nav {
     transition: filter 0.5s, opacity 0.5s;
     bottom: 0;
@@ -10576,10 +10639,28 @@ h4 {
   height: 100%; }
 
 #airport-slider {
-  width: 50%; }
+  width: 50%;
+  position: relative;
+  height: 100%;
+  padding: 64px 56px 64px 64px; }
+  #airport-slider .airport-slider {
+    width: 100%;
+    height: 100%; }
+  #airport-slider .swiper-wrapper {
+    width: 100%;
+    height: 100%; }
+  #airport-slider .swiper-slide {
+    width: 100%;
+    height: 100%; }
+  #airport-slider .slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
 
 #airport-text {
-  width: 50%;
+  width: 45%;
   padding-left: 56px;
   flex-shrink: 0;
   height: 100%;
@@ -10590,6 +10671,8 @@ h4 {
   flex-direction: column;
   justify-content: center;
   min-height: 600px; }
+  #airport-text .scrollbar {
+    padding-right: 20px; }
   #airport-text .subheder {
     font-size: 16px;
     opacity: 0.5; }
@@ -10607,17 +10690,62 @@ h4 {
   #airport-text .simple-button {
     margin-top: 32px; }
 
-#airport-slider {
-  position: relative;
+#airport-slider-thumbs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  padding: 0 15px; }
+  #airport-slider-thumbs .swiper-wrapper {
+    width: 100%;
+    height: 100%; }
+  #airport-slider-thumbs .swiper-slide {
+    width: 50px;
+    height: 50px;
+    position: relative; }
+    #airport-slider-thumbs .swiper-slide:after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      background: rgba(255, 255, 255, 0.3);
+      transition: .2s ease-in-out all; }
+    #airport-slider-thumbs .swiper-slide:before {
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      background: #fff;
+      transition: .3s ease-in-out all;
+      width: 0; }
+  #airport-slider-thumbs .slide {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: .2s ease-in-out all;
+    box-sizing: border-box;
+    opacity: .3; }
+  #airport-slider-thumbs .active-slide .slide {
+    opacity: 1; }
+  #airport-slider-thumbs .active-slide:before {
+    transition: 2.5s ease-in-out all;
+    width: 100%; }
+
+.airport__wrap {
   width: 100%;
   height: 100%;
-  padding: 64px 56px 64px 64px; }
-  #airport-slider .slide {
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; }
+  position: relative; }
 
 .mobile {
   overflow: auto; }

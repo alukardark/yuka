@@ -93,11 +93,12 @@ jQuery(document).ready(function ($) {
     // checkMobile();
 
     var div = $('#airport-text');
-    $('body').bind('mousewheel', function (e) {
+    $(document).bind('wheel ', function (e) {
+
             // checkMobile();
             if (!div.is(e.target) && div.has(e.target).length === 0) {
                 // if (e.target != document.getElementById('airport-text')) {
-                if (e.originalEvent.wheelDelta / 120 > 0) {
+                if (event.deltaY < 0) {
                     if (transitionActive == false) {
                         prevScreen();
                         console.log('scrolling up !');
@@ -184,7 +185,7 @@ jQuery(document).ready(function ($) {
         loop: true,
         slidesPerView: 4,
         spaceBetween: 30,
-        slidesPerGroup: 4,
+        slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         speed: 800,
         breakpoints: {
@@ -202,9 +203,10 @@ jQuery(document).ready(function ($) {
             // }
         },
         pagination: {
-            el: '#portfolio-items-grid .swiper-pagination',
-            clickable: true,
+            el: '#portfolio-items-grid .swiper-nav-info',
+            type: "fraction",
         },
+
 
 
         navigation: {
@@ -215,12 +217,12 @@ jQuery(document).ready(function ($) {
             init: function () {
 
             },
-            paginationUpdate: function (swiper, paginationEl) {
-                $('.portfolio__currrent-slide').text($('#portfolio-items-grid .swiper-pagination-bullet-active').index() + 1);
-            },
-            paginationRender: function () {
-                $('.portfolio__total-slides').text($('#portfolio-items-grid .swiper-pagination-bullet').length)
-            },
+            // paginationUpdate: function (swiper, paginationEl) {
+            //     $('.portfolio__currrent-slide').text($('#portfolio-items-grid .swiper-pagination-bullet-active').index() + 1);
+            // },
+            // paginationRender: function () {
+            //     $('.portfolio__total-slides').text($('#portfolio-items-grid .swiper-pagination-bullet').length)
+            // },
 
         }
     });
@@ -248,8 +250,8 @@ jQuery(document).ready(function ($) {
             // }
         },
         pagination: {
-            el: '#blog-items-grid .swiper-pagination',
-            clickable: true,
+            el: '#blog-items-grid .swiper-nav-info',
+            type: "fraction",
         },
 
 
@@ -259,22 +261,56 @@ jQuery(document).ready(function ($) {
         },
         on: {
             slideChangeTransitionStart: function () {
-
                 $('#blog-items-grid .swiper-slide-active').prevAll().addClass('hide');
                 $('#blog-items-grid .swiper-slide-active').nextAll().removeClass('hide');
                 $('#blog-items-grid .swiper-slide-active').removeClass('hide');
-
             },
-            paginationUpdate: function (swiper, paginationEl) {
-                $('.blog__currrent-slide').text($('#blog-items-grid .swiper-pagination-bullet-active').index() + 1);
-
-
-            },
-            paginationRender: function () {
-                $('.blog__total-slides').text($('#blog-items-grid .swiper-pagination-bullet').length)
-            },
+            // paginationUpdate: function (swiper, paginationEl) {
+            //     $('.blog__currrent-slide').text($('#blog-items-grid .swiper-pagination-bullet-active').index() + 1);
+            // },
+            // paginationRender: function () {
+            //     $('.blog__total-slides').text($('#blog-items-grid .swiper-pagination-bullet').length)
+            // },
 
         }
+    });
+
+
+    var airportSlider = new Swiper("#airport-slider-thumbs.swiper-container", {
+        spaceBetween: 15,
+        slidesPerView: 'auto',
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+
+
+    });
+
+    var swiper2 = new Swiper(".airport-slider.swiper-container", {
+        spaceBetween: 0,
+        slidesPerView: 'auto',
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 800,
+        // slidesPerView: 'auto',
+        thumbs: {
+            swiper: airportSlider,
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        on: {
+            init: function(){
+                $('#airport-slider-thumbs .swiper-slide').eq(0).addClass('active-slide')
+            },
+            slideChange: function(){
+                $('#airport-slider-thumbs .swiper-slide').removeClass('active-slide');
+                $('#airport-slider-thumbs .swiper-slide').eq(this.activeIndex).addClass('active-slide')
+            }
+        }
+
     });
 
 });
