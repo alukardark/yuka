@@ -36,15 +36,18 @@
   height: 100%;
 
   padding: 64px 56px 64px 64px;
-  .airport-slider{
+  .simple-button {
+    display: none;
+  }
+  .airport-slider {
     width: 100%;
     height: 100%;
   }
-  .swiper-wrapper{
+  .swiper-wrapper {
     width: 100%;
     height: 100%;
   }
-  .swiper-slide{
+  .swiper-slide {
     width: 100%;
     height: 100%;
   }
@@ -67,14 +70,11 @@
   flex-direction: column;
   justify-content: center;
 
-
-
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 600px;
-  .scrollbar{
+  .scrollbar {
     padding-right: 20px;
   }
 
@@ -92,6 +92,10 @@
     font-size: 16px;
     line-height: 1.5;
     max-width: 520px;
+    p{
+      font-size: 16px;
+      line-height: 1.5;
+    }
     strong {
       font-weight: 500;
     }
@@ -101,7 +105,7 @@
   }
 }
 
-#airport-slider-thumbs{
+#airport-slider-thumbs {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -110,17 +114,17 @@
   height: 100px;
   z-index: 1;
   padding: 0 15px;
-  .swiper-wrapper{
+  .swiper-wrapper {
     width: 100%;
     height: 100%;
   }
-  .swiper-slide{
+  .swiper-slide {
     //width: 50px;
     //height: 50px;
     width: 50px;
     height: 50px;
     position: relative;
-    &:after{
+    &:after {
       content: '';
       height: 1px;
       width: 100%;
@@ -130,7 +134,7 @@
       background: rgba(255, 255, 255, 0.3);
       transition: .2s ease-in-out all;
     }
-    &:before{
+    &:before {
       content: '';
       height: 1px;
       width: 100%;
@@ -154,19 +158,120 @@
     box-sizing: border-box;
     opacity: .3;
   }
-  .active-slide{
-    .slide{
+  .active-slide {
+    .slide {
       opacity: 1;
     }
-    &:before{
+    &:before {
       transition: 2.5s ease-in-out all;
       width: 100%;
     }
   }
 }
-.airport__wrap{
+
+.airport__wrap {
   width: 100%;
   height: 100%;
-
   position: relative;
+}
+
+
+@media (max-width: 1360px) {
+  #airport-text {
+    width: 42%;
+  }
+}
+@media (max-width: $xl) {
+
+  #airport{
+    h2{
+      font-size: 52px;
+    }
+  }
+
+  #airport-slider{
+    padding: 75px 0px;
+    width: 45%;
+  }
+  #airport-text{
+    padding-left: 25px;
+    width: 44%;
+  }
+
+}
+@media (max-width: $lg) {
+  #airport{
+    h2{
+      font-size: 46px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+    .subheder {
+      font-size: 14px;
+    }
+  }
+  #airport-text{
+    .content{
+      font-size: 14px;
+      line-height: 1.34;
+      p{
+        font-size: 14px;
+        line-height: 1.34;
+      }
+    }
+  }
+
+}
+
+@media (max-width: $md) {
+  #airport {
+    padding-top: 78px;
+    padding-bottom: 100px;
+    background: url(../img/mobile-bg-01.jpg) center bottom/cover no-repeat;
+  }
+  #airport-grid {
+    flex-direction: column;
+  }
+  #airport-slider {
+    width: 100%;
+    order: 1;
+    padding: 0;
+    .simple-button {
+      display: block;
+    }
+    .airport-slider{
+      height: 320px;
+    }
+  }
+  #airport-text {
+    width: 100%;
+    order: 0;
+    padding-left: 0;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    .simple-button {
+      display: none;
+    }
+    .content {
+      padding: 0;
+      margin-top: 0;
+      max-width: 100%;
+    }
+    .scrollbar {
+      height: auto;
+    }
+    .simplebar-content {
+      padding: 0 !important;
+    }
+    .subheder {
+      font-size: 14px;
+    }
+  }
+  #airport-slider-thumbs{
+    position: static;
+    margin-bottom: 20px;
+    padding: 0;
+    margin-top: 15px;
+  }
+
 }

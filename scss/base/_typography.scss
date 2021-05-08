@@ -52,64 +52,47 @@ h4 {
   font-family: $font-basic;
 }
 
-@media (max-width: $xl) {
-  h1 {
-  }
-}
 
-@media (max-width: $lg) {
-  p {
-    font-size: 16px;
-  }
-  h1 {
-    font-size: 45px;
-    line-height: 43px;
-    margin-bottom: 50px;
-    margin-top: 55px;
-  }
-  h2 {
-    font-size: 45px;
-    line-height: 43px;
-  }
-  h3 {
-    font-size: 34px;
-  }
-}
 
 @media (max-width: $md) {
   h1 {
-    font-size: 40px;
-    line-height: 1;
+    font-size: 46px;
+    line-height: 1.25;
+    margin-bottom: 15px;
   }
   h2 {
-    font-size: 40px;
-    line-height: 1;
+    font-size: 46px;
+    line-height: 1.25;
+    margin-bottom: 15px;
   }
   h3 {
     font-size: 34px;
+    line-height: 1.25;
   }
   h4 {
     font-size: 20px;
+    line-height: 1.25;
   }
   p {
     margin-bottom: 20px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: $sm) {
-  h1 {
-    font-size: 38px;
-    margin-bottom: 25px;
-    margin-top: 40px;
-  }
-  h2 {
-    font-size: 38px;
-    margin-bottom: 25px;
-  }
-  h3 {
-    font-size: 30px;
-  }
-  h4 {
-    font-size: 20px;
-  }
-}
+//@media (max-width: $sm) {
+//  h1 {
+//    font-size: 38px;
+//    margin-bottom: 25px;
+//    margin-top: 40px;
+//  }
+//  h2 {
+//    font-size: 38px;
+//    margin-bottom: 25px;
+//  }
+//  h3 {
+//    font-size: 30px;
+//  }
+//  h4 {
+//    font-size: 20px;
+//  }
+//}

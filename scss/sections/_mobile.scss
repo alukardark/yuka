@@ -1,18 +1,49 @@
 .mobile{
   overflow: auto;
   .fullscreen-section{
-    position: static !important;
+    position: relative !important;
     opacity: 1 !important;
     transform: none !important;
+    height: auto !important;
+    pointer-events: auto !important;
+    min-height: auto !important;
+    height: auto !important;
   }
   #main #about-grid{
     opacity: 1;
   }
-  .service-item{
-    opacity: 1;
-
-  }
   #services{
     pointer-events: auto;
+  }
+  #services.-prev .service-item{
+    opacity: 1;
+  }
+}
+
+@media (max-width: $md) {
+  body{
+    overflow: auto;
+    .fullscreen-section{
+      position: relative !important;
+      opacity: 1 !important;
+      transform: none !important;
+      height: auto !important;
+      pointer-events: auto !important;
+      min-height: auto !important;
+      height: auto !important;
+    }
+    #main #about-grid{
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    #services{
+      pointer-events: auto;
+    }
+    #services .service-item{
+      opacity: 1 !important;
+    }
+    #main .main-logo{
+      opacity: 1 !important;
+    }
   }
 }

@@ -25,3 +25,10 @@
     height: 100vh;
   }
 }
+
+
+@media (max-width: $md) {
+  #videoBG {
+    display: none;
+  }
+}

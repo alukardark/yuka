@@ -1,6 +1,6 @@
 #about-grid,
 #portfolio-grid,
-#blog-grid{
+#blog-grid {
   display: flex;
   width: 100%;
   height: 100%;
@@ -16,7 +16,7 @@
       font-family: $font-add;
       font-weight: bold;
       font-size: 60px;
-      line-height: 77px;
+      line-height: 1.75;
       margin-top: 2px;
       margin-bottom: 0;
     }
@@ -52,6 +52,7 @@
 }
 
 
+
 @media (max-width: 1459px) {
   #about-grid .main-container .grid, #portfolio-grid .main-container .grid, #blog-grid .main-container .grid {
     margin-bottom: 30px;
@@ -62,12 +63,44 @@
     width: 45%;
   }
 }
+
 @media (max-width: 767px) {
   #about-grid .main-container .grid, #portfolio-grid .main-container .grid, #blog-grid .main-container .grid {
     padding-right: 0;
+    opacity: .9;
   }
   #about-grid .main-container .grid .box, #portfolio-grid .main-container .grid .box, #blog-grid .main-container .grid .box {
     width: 100%;
     max-width: 500px;
+  }
+
+  #portfolio-grid .main-container .grid, #blog-grid .main-container .grid{
+    margin-top: 10px;
+  }
+
+  #about-grid .main-container {
+    .header {
+      font-size: 46px;
+      line-height: 1;
+    }
+    .subheader {
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    .grid .box {
+      margin-bottom: 30px;
+
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-height: 800px) {
+  #about-grid .main-container .grid{
+    margin-bottom: 65px;
+  }
+  #portfolio-grid .main-container .grid, #blog-grid .main-container .grid {
+    margin-bottom: 35px;
+    margin-top: 0px;
   }
 }

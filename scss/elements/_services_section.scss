@@ -38,6 +38,7 @@
   position: relative;
   z-index: 2;
 }
+
 .service-item {
   width: 50%;
   height: 50%;
@@ -86,6 +87,7 @@
     font-size: 36px;
     line-height: 46px;
     margin-top: 12px;
+    max-width: 300px;
 
     color: #ffffff;
 
@@ -95,7 +97,6 @@
   .simple-button {
     margin-top: 24px;
     transform: translate(0, -36px);
-    transition: transform 0.5s, opacity 0.5s;
     opacity: 0;
   }
 
@@ -135,6 +136,7 @@
     }
   }
 }
+
 #services.-prev {
   opacity: 0;
   pointer-events: none;
@@ -157,4 +159,62 @@
       transition-delay: 0.4s;
     }
   }
+}
+
+@media (max-width: $lg) {
+  .service-item {
+    padding-left: 25px;
+    .title {
+      font-size: 34px;
+      line-height: 1.25;
+      margin-top: 0;
+    }
+    .caption {
+      font-size: 14px;
+    }
+  }
+
+}
+
+@media (max-width: $md) {
+  #services{
+    background: url(../img/mobile-bg-01.jpg) center bottom/cover no-repeat;
+    padding-top: 50px;
+  }
+  #services-bg{
+    display: none;
+  }
+  #services-bg .service-bg{
+
+  }
+  .service-item {
+    padding-left: 15px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 78px;
+    transition: .2s ease-in-out opacity;
+    border-bottom: none !important;
+    transform: none;
+    &:hover{
+      background: transparent;
+    }
+    .simple-button{
+      margin-top: 24px;
+      transform: none;
+      opacity: 1;
+    }
+    .caption{
+      transform: none;
+    }
+    .title{
+      transform: none;
+      max-width: 100%;
+    }
+  }
+
+  #services-grid{
+    height: auto;
+    flex-direction: column;
+  }
+
 }

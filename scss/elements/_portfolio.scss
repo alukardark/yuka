@@ -97,6 +97,7 @@
   .swiper-container{
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
   }
 
 }
@@ -133,7 +134,7 @@
 
     padding: 32px;
     height: 410px;
-
+    box-sizing: border-box;
     .title {
       font-family: $font-add;
       font-style: normal;
@@ -210,4 +211,48 @@
     transform: translate(0, -32px);
     transition: opacity 0.5s, transform 0.5s;
   }
+}
+
+
+@media (max-width: $md) {
+  .portfolio-item-container .portfolio-item{
+    height: 515px;
+  }
+  #portfolio{
+    background: url(../img/mobile-bg-01.jpg) center bottom/cover no-repeat;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    .bg-cont{
+      display: none;
+    }
+    .swiper-nav{
+      margin-top: 25px;
+    }
+
+    .portfolio-item{
+      .simple-button{
+        margin-top: 24px;
+        transform: none;
+        opacity: 1;
+      }
+      .caption{
+        transform: none;
+      }
+      .title{
+        transform: none;
+        max-width: 100%;
+      }
+      .portfolio-item__img{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 290px;
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+
+  }
+
 }

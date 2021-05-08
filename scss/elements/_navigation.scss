@@ -2,7 +2,7 @@
   width: 479px;
   height: 100%;
   position: fixed;
-  padding: 72px 0 72px 72px;
+  padding: 40px 0 30px;
 
   right: 112px;
   top: 0;
@@ -16,7 +16,7 @@
   transform: translate(100%, 0);
 
   transition: opacity 0.2s, transform 0.5s;
-
+  overflow: auto;
   .lang-switcher {
     display: none;
   }
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  padding-right: 15px;
   .first-layer {
     & > li {
       & > a {
@@ -159,6 +159,7 @@
   margin-top: 45px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
   a {
     font-weight: normal;
     font-size: 16px;
@@ -211,12 +212,12 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $md) {
   #navigation {
     z-index: 3;
     width: 100%;
 
-    padding: 75px 15px 25px;
+    padding: 40px 15px 15px;
     .lang-switcher {
       bottom: 25px;
       display: block;

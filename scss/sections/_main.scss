@@ -8,9 +8,12 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 410px;
+    height: 100%;
     left: 0;
     bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     @include bgsvg(
                     '<svg width="1440" height="410" viewBox="0 0 1440 410" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="1440" height="410" fill="url(#paint0_linear)"/>
@@ -27,7 +30,7 @@
 
   pointer-events: none;
 
-  #main-logo {
+  .main-logo {
     opacity: 0;
   }
   #about-grid {
@@ -37,7 +40,7 @@
   }
 
   &.-prev {
-    #main-logo {
+    .main-logo {
       transition: opacity 0.5s;
       opacity: 0;
     }
@@ -50,7 +53,7 @@
 
   &.-active {
     pointer-events: all;
-    #main-logo {
+    .main-logo {
       transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
       opacity: 1;
     }
@@ -63,16 +66,21 @@
 }
 
 @media (max-width: 1459px) {
-  #main-logo {
+  .main-logo {
     top: 60px;
   }
 }
 @media (max-width: 767px) {
-  #main-logo {
-    top: 30px;
-    width: 140px;
-    height: 60px;
-    background-repeat: no-repeat;
-    background-size: contain;
+  .main-logo {
+    top: 19px;
+  }
+  #main{
+    background: url(../img/mobile-bg-0.jpg) center bottom/cover no-repeat;
+    &:before{
+      display: none;
+    }
+  }
+  #main #about-grid{
+    padding-top: 200px;
   }
 }

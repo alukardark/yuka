@@ -1,14 +1,15 @@
-#main-logo {
+.main-logo {
   width: 161px;
   height: 62px;
-
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   position: absolute;
-
   top: 96px;
   left: 15px;
 
   @include bgsvg(
-    '<svg width="161" height="62" viewBox="0 0 161 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  '<svg width="161" height="62" viewBox="0 0 161 62" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0)">
     <path d="M80.5605 30.3006L112.393 0.85672H115.391L82.3627 31L116.257 61.3006H113.26L80.5605 31.8567V30.3006Z" fill="white" fill-opacity="0.4"/>
     <path d="M2.3047 0.944183H0L22.0766 36.4377V61.3006H23.9654V36.4377L23.0124 34.357L2.3047 0.944183Z" fill="white" fill-opacity="0.4"/>
