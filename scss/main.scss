@@ -36,9 +36,15 @@
 'base/typography',
 'base/helpers';
 
+@import "functions/svg";
+
 // 4. Layout-related sections
 @import
-'layout/header'
+'layout/header',
+'layout/inner-page',
+'layout/portfolio',
+'layout/article',
+'layout/service'
 ;
 
 
@@ -59,7 +65,7 @@
 
 
 
-@import "functions/svg";
+
 
 
 @import "elements/aside";

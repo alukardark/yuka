@@ -1,0 +1,30 @@
+.article {
+
+  &__content {
+    padding-top: 225px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    max-width: 885px;
+  }
+  .date {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: $md) {
+  .article {
+    &__content {
+      padding-top: 150px;
+    }
+    &__header{
+      margin-bottom: 35px;
+    }
+    .date {
+      margin-top: 15px;
+    }
+  }
+}

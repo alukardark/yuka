@@ -125,6 +125,12 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    document.querySelectorAll('.inner-page table').forEach(el => {
+        new SimpleBar(el, {
+            autoHide: false
+        });
+    });
+
     var vid = document.getElementById("videoBG");
 
     function playVid() {
@@ -306,5 +312,8 @@ jQuery(document).ready(function ($) {
         }
 
     });
+
+
+
 
 });

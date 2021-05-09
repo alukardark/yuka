@@ -166,7 +166,7 @@
 
 @media (max-width: $md) {
   #contact {
-    background: url(../img/mobile-bg-01.jpg) center bottom/cover no-repeat;
+    background: url(../img/mobile-bg-01.png) center bottom/cover no-repeat;
     padding-top: 50px;
     padding-bottom: 50px;
     .header{
@@ -182,13 +182,18 @@
     border: none;
     .simple-button{
       width: 100%;
+      padding: 0 50px 0 15px;
     }
   }
   .form-col {
     width: 100%;
+    min-width: 100%;
     margin-right: 0;
     margin-bottom: 90px;
     margin-top: 50px;
+  }
+  .info-col{
+    margin-right: 0;
   }
   .contact-grid {
     flex-direction: column;

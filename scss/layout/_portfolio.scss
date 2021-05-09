@@ -1,0 +1,205 @@
+.portfolio {
+  &__banner {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 560px;
+    & > .main-container {
+      position: relative;
+    }
+  }
+  &__content {
+
+  }
+  &__header {
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+  &__header-box {
+    max-width: 640px;
+    margin-right: 15px;
+  }
+  .date {
+    margin-top: 50px;
+  }
+  &__img-wrap {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 120px;
+  }
+  &__img {
+    width: 635px;
+    min-width: 635px;
+    height: 810px;
+    margin-right: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__img-desc {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid #fff;
+    padding-bottom: 40px;
+    max-width: 305px;
+    width: 100%;
+  }
+  &__img-mini-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 100px 0;
+  }
+  &__img-mini {
+    display: inline-block;
+    margin-bottom: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: calc(50% - 10px);
+    height: 650px;
+  }
+  &__link-next {
+    display: flex;
+    flex-direction: column;
+    min-height: 175px;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none !important;
+    padding: 40px 100px 50px 40px;
+    position: relative;
+    margin-top: 100px;
+    span {
+      font-weight: normal;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 10px;
+    }
+    strong {
+      font-family: $font-add;
+      font-weight: bold;
+      font-size: 24px;
+      color: #FFFFFF;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 52px;
+      height: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 40px;
+      transition: .2s ease-in-out all;
+      @include bgsvg('<svg  viewBox="0 0 52 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 16L47 16" stroke="#D3C0A4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 11L47 16L42 21" stroke="#D3C0A4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+');
+    }
+    &:hover {
+      &:after {
+        transform: translate(5px, -50%);
+      }
+    }
+  }
+
+}
+
+@media (max-width: $lg) {
+  .portfolio {
+    &__banner {
+      height: 465px;
+    }
+    &__img {
+      width: 600px;
+      min-width: 600px;
+      height: 750px;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+    &__img-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 100px;
+    }
+    &__img-mini-wrap {
+      margin: 70px 0;
+    }
+    &__img-mini {
+      height: 500px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .portfolio {
+    &__banner {
+      height: 325px;
+    }
+    &__header {
+      padding-top: 40px;
+    }
+    &__img {
+      width: 100%;
+      min-width: auto;
+      height: 550px;
+    }
+    &__img-desc {
+      font-size: 14px;
+      padding-bottom: 25px;
+    }
+
+    &__img-wrap {
+      margin-bottom: 65px;
+    }
+    &__img-mini-wrap {
+      margin: 45px 0;
+    }
+    &__img-mini {
+      height: 320px;
+      width: calc(50% - 5px);
+    }
+    &__header {
+      flex-direction: column;
+    }
+    .date {
+      margin-top: 15px;
+    }
+    &__link-next {
+      margin-top: 80px;
+      padding: 25px 85px 35px 25px;
+      min-height: 150px;
+      &:after {
+        right: 25px;
+      }
+      span {
+        font-size: 14px;
+      }
+      strong {
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .portfolio {
+    &__link-next {
+      padding: 15px 80px 25px 15px;
+      &:after {
+        right: 15px;
+      }
+    }
+  }
+}
